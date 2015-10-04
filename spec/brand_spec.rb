@@ -14,9 +14,9 @@ describe (Brand) do
     brand = Brand.new({:name => ''.*(1)})
     expect(brand.save()).to(eq(false))
   end
-  #
-  # it("capitalizes the name") do
-  #   brand = Brand.create({:name => "nike"})
-  #   expect(brand.name()).to(eq("Nike"))
-  # end
+
+  it("capitalizes the name") do
+    brand = Brand.create({:name => "nike"})
+    expect(brand.name()).to(eq("Nike"))
+  end
 end
