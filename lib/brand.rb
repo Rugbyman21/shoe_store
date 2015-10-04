@@ -1,5 +1,5 @@
 class Brand < ActiveRecord::Base
-  belongs_to(:stores)
+  has_and_belongs_to_many(:stores)
   # validates(:name, {:presence => true, :length => { :minimum => 1 }})
   # before_save(:capitalize_brand)
   #
