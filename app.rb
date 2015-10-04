@@ -20,6 +20,12 @@ post ('/brands') do
   erb(:brand)
 end
 
+get ('/brands/:id') do
+  @brand = Brand.find(params.fetch("id").to_i)
+  @stores = Store.all
+  erb(:brand_info)
+end
+
 
 # get ('/brands/new') do
 #   @brands = Brand.all

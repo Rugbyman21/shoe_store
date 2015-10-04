@@ -1,0 +1,28 @@
+<h1><a href="/">Brands</a></h1>
+<h3><%= @brand.name %></h3>
+<% if @stores.any? %>
+  <h4>Select all stores where this brand is sold:</h4>
+    <form action="/brands/<%= @brand.id %>" method="post">
+      <input type="hidden" name="_method" value="patch">
+      <% @stores.order("name ASC").each do |store| %>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" name="store_ids[]" value="<%= store.id %>"><%= store.name %>
+          </label>
+        </div>
+      <% end %>
+      <button type="submit" class="btn btn-info">Add Stores</button>
+    </form>
+<% end %>
+<br>
+<h4>Here are all the stores where this brand is sold:</h4>
+<% @brand.stores.order("name ASC").each do |store| %>
+  <%= store.name %><br>
+<% end %>
+<br>
+<form action="/brands/<%= @brand.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit" class="btn btn-danger">Delete Brand</button>
+</form>
+<br>
+<a href="/brands/<%= @brand.id %>/edit"><button type="submit" class="btn btn-info">Edit Brand</button></a>
