@@ -1,0 +1,12 @@
+<h1>
+  <a href="/brands">Brands</a>
+</h1>
+<form action="/brands" method="post">
+  <input id="name" name="name" type="text">
+  <button type="submit" class="btn btn-success">Add brand</button>
+</form>
+<h4>
+  <% @brands.order("name ASC").each do |brand| %>
+    <a href="/brands/<%= brand.id %>"><%= brand.name %><br></a>
+  <% end %>
+</h4>

@@ -1,0 +1,31 @@
+<h1>Store</h1>
+
+<% @stores.each do |store| %>
+
+<ul>
+    <li> <a href="/stores/<%= store.id %>"><%= store.name %> </a>
+      <form action="/stores/<%= store.id %>/delete" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="hidden" id="store_id" name="store_id" value="<%= store.id %>">
+        <button class="btn btn-danger btn-sm" type="submit">Delete Store</button>
+      </form>
+    </li>
+    <form action="/stores/<%= store.id %>/update" method="post"></a>
+      <input type="hidden" name="_method" value="patch">
+      <input type="text" name="store_name">
+      <button name="submit">Update Store's Name</button>
+    </form>
+</ul>
+
+<% end %>
+
+<h3>Add a Store</h3>
+  <form action="/stores/new" method="post">
+    <label for="store_name">Store Name</label>
+    <input type="text" name="store_name" placeholder="ex. Foot Locker">
+    <button name="submit">Add Store</button>
+  </form>
+
+<a href="/">Back</a>
+<br>
+<a href="/brands">Bands List</a>
