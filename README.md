@@ -6,21 +6,22 @@
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. Do you want other developers to use this code in their apps? Talk about things like that here in simple terms.}_
+_This application lets a user add shoe brands and stores and assign shoe brands to stores. You can add, edit, and delete shoe brands or stores._
 
 ## Setup
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Are there other applications this app depends on?}_
+* _Clone this repository to your local system_
+* _Install Sinatra and Postgres_
+* _Run postgress_
+* _run the following commands in shoe store project folder_
+* _$ rake db:create_
+* _$ rake db:schema:load_
+* _$ ruby app.rb_
+* _load localhost server and enjoy on preferred web browser._
 
 ## Technologies Used
 
-_{Tell me about the languages you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+_Ruby, HTML, Postgres, SQL were used to create and launch this application._
 
 ### Legal
 
