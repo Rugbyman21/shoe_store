@@ -1,6 +1,6 @@
 # _Shoe Store_
 
-##### _{Brief description of application}, October 2, 2015_
+##### _Allows a user to check to see what brands are at each store, October 4, 2015_
 
 #### By _**Trevor Scherling**_
 
