@@ -26,24 +26,32 @@ get ('/brands/:id') do
   erb(:brand_info)
 end
 
+patch ('/brands/:id') do
+  @brand = Brand.find(params.fetch("id").to_i)
+  store_ids = params.fetch("store_ids")
+  @brand.update({:store_ids => store_ids})
+  @store = Store.all
+  erb(:brand_info)
+end
 
-# get ('/brands/new') do
-#   @brands = Brand.all
-#   erb (:brands)
-# end
-#
-# post ('/bands/new') do
-#   name = params.fetch('brand_name')
-#   @brands = Brand.create({name: name})
-#   @stores = Store.all
-#   if @brand.save
-#     @brands = Brand.all
-#
-#     erb (:brands)
-#   else
-#     erb (:error_band)
-#   end
-# end
+delete ('/brands/:id') do
+  @brand = Brand.find(params.fetch("id").to_i)
+  @brand.destroy
+  erb(:index)
+end
+
+get "/brands/:id/edit" do
+  @brand = Brand.find(params.fetch("id").to_i)
+  erb(:brand_edit)
+end
+
+patch "/brands/:id/edit" do
+  @brand = Brand.find(params.fetch("id").to_i)
+  name = params.fetch("name")
+  @brand.update({name: name})
+  @stores = Store.all
+  erb(:brand_info)
+end
 
 #### Store Routes ####
 
