@@ -62,7 +62,7 @@ get ('/stores') do
   erb (:stores)
 end
 
-post ('/stores') do
+post ('/stores/') do
   name = params.fetch("name")
   Store.create({name: name})
   @brands = Brand.all
